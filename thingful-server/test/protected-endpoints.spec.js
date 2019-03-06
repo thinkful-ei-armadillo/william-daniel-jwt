@@ -5,8 +5,8 @@ describe('Protected endpoints', function () {
     let db
     const {
         testUsers,
-        testArticles,
-        testComments,
+        testThings,
+        testReviews,
     } = helpers.makeThingsFixtures()
     before('make knex instance', () => {
         db = knex({
@@ -18,27 +18,27 @@ describe('Protected endpoints', function () {
     after('disconnect from db', () => db.destroy())
     before('cleanup', () => helpers.cleanTables(db))
     afterEach('cleanup', () => helpers.cleanTables(db))
-    beforeEach('insert articles', () =>
-        helpers.seedArticlesTables(
+    beforeEach('insert things', () =>
+        helpers.seedthingsTables(
             db,
             testUsers,
-            testArticles,
-            testComments,
+            testThings,
+            testReviews,
         )
     )
     const protectedEndpoints = [{
-            name: 'GET /api/articles/:article_id',
-            path: '/api/articles/1',
+            name: 'GET /api/things/:thing_id',
+            path: '/api/things/1',
             method: supertest(app).get,
         },
         {
-            name: 'GET /api/articles/:article_id/comments',
-            path: '/api/articles/1/comments',
+            name: 'GET /api/things/:thing_id/reviews',
+            path: '/api/things/1/reviews',
             method: supertest(app).get,
         },
         {
-            name: 'POST /api/comments',
-            path: '/api/comments',
+            name: 'POST /api/reviews',
+            path: '/api/reviews',
             method: supertest(app).post,
         },
     ]
