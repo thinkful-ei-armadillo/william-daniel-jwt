@@ -96,7 +96,7 @@ describe('Things Endpoints', function() {
         testReviews
       ));
     context('Given no things', () => {
-      it.only('responds with 404', () => {
+      it.skip('responds with 404', () => {
         const thingId = 123456;
         console.log(helpers.makeAuthHeader(testUsers[0]));
         return supertest(app)
