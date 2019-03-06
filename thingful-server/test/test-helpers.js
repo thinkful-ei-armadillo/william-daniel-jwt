@@ -8,75 +8,78 @@ function makeUsersArray() {
       user_name: 'test-user-1',
       full_name: 'Test user 1',
       nickname: 'TU1',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615',
+      password: '$2a$12$umybdeT2oGEqvSmPvVwic.awCdNQK12iRDnIpzy8O3h7MItMnh2ge',
+      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 2,
       user_name: 'test-user-2',
       full_name: 'Test user 2',
       nickname: 'TU2',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615',
+      password: '$2a$12$umybdeT2oGEqvSmPvVwic.awCdNQK12iRDnIpzy8O3h7MItMnh2ge',
+      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 3,
       user_name: 'test-user-3',
       full_name: 'Test user 3',
       nickname: 'TU3',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615',
+      password: '$2a$12$umybdeT2oGEqvSmPvVwic.awCdNQK12iRDnIpzy8O3h7MItMnh2ge',
+      date_created: '2029-01-22T16:28:32.615Z',
     },
     {
       id: 4,
       user_name: 'test-user-4',
       full_name: 'Test user 4',
       nickname: 'TU4',
-      password: 'password',
-      date_created: '2029-01-22T16:28:32.615',
+      password: '$2a$12$umybdeT2oGEqvSmPvVwic.awCdNQK12iRDnIpzy8O3h7MItMnh2ge',
+      date_created: '2029-01-22T16:28:32.615Z',
     },
   ]
 }
-function makethingsArray(users) {
+
+function makeThingsArray(users) {
   return [
     {
       id: 1,
-      title: 'First test post!',
-      style: 'How-to',
-      author_id: users[0].id,
+      title: 'First test thing!',
+      image: 'http://placehold.it/500x500',
+      user_id: users[0].id,
       date_created: '2029-01-22T16:28:32.615Z',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
     },
     {
       id: 2,
-      title: 'Second test post!',
-      style: 'Interview',
-      author_id: users[1].id,
+      title: 'Second test thing!',
+      image: 'http://placehold.it/500x500',
+      user_id: users[1].id,
       date_created: '2029-01-22T16:28:32.615Z',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
     },
     {
       id: 3,
-      title: 'Third test post!',
-      style: 'News',
-      author_id: users[2].id,
+      title: 'Third test thing!',
+      image: 'http://placehold.it/500x500',
+      user_id: users[2].id,
       date_created: '2029-01-22T16:28:32.615Z',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
     },
     {
       id: 4,
-      title: 'Fourth test post!',
-      style: 'Listicle',
-      author_id: users[3].id,
+      title: 'Fourth test thing!',
+      image: 'http://placehold.it/500x500',
+      user_id: users[3].id,
       date_created: '2029-01-22T16:28:32.615Z',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus consequuntur deserunt commodi, nobis qui inventore corrupti iusto aliquid debitis unde non.Adipisci, pariatur.Molestiae, libero esse hic adipisci autem neque ?',
     },
   ]
 }
-function makereviewsArray(users, things) {
+
+function makeReviewsArray(users, things) {
   return [
     {
       id: 1,
+      rating: 2,
       text: 'First test review!',
       thing_id: things[0].id,
       user_id: users[0].id,
@@ -84,6 +87,7 @@ function makereviewsArray(users, things) {
     },
     {
       id: 2,
+      rating: 3,
       text: 'Second test review!',
       thing_id: things[0].id,
       user_id: users[1].id,
@@ -91,6 +95,7 @@ function makereviewsArray(users, things) {
     },
     {
       id: 3,
+      rating: 1,
       text: 'Third test review!',
       thing_id: things[0].id,
       user_id: users[2].id,
@@ -98,6 +103,7 @@ function makereviewsArray(users, things) {
     },
     {
       id: 4,
+      rating: 5,
       text: 'Fourth test review!',
       thing_id: things[0].id,
       user_id: users[3].id,
@@ -105,6 +111,7 @@ function makereviewsArray(users, things) {
     },
     {
       id: 5,
+      rating: 1,
       text: 'Fifth test review!',
       thing_id: things[things.length - 1].id,
       user_id: users[0].id,
@@ -112,6 +119,7 @@ function makereviewsArray(users, things) {
     },
     {
       id: 6,
+      rating: 2,
       text: 'Sixth test review!',
       thing_id: things[things.length - 1].id,
       user_id: users[2].id,
@@ -119,6 +127,7 @@ function makereviewsArray(users, things) {
     },
     {
       id: 7,
+      rating: 5,
       text: 'Seventh test review!',
       thing_id: things[3].id,
       user_id: users[0].id,
@@ -126,36 +135,55 @@ function makereviewsArray(users, things) {
     },
   ];
 }
-function makeExpectedthing(users, thing, reviews=[]) {
-  const author = users
-    .find(user => user.id === thing.author_id)
-  const number_of_reviews = reviews
+
+function makeExpectedThing(users, thing, reviews=[]) {
+  const user = users
+    .find(user => user.id === thing.user_id)
+
+  const thingReviews = reviews
     .filter(review => review.thing_id === thing.id)
-    .length
+
+  const number_of_reviews = thingReviews.length
+  const average_review_rating = calculateAverageReviewRating(thingReviews)
+
   return {
     id: thing.id,
-    style: thing.style,
+    image: thing.image,
     title: thing.title,
     content: thing.content,
     date_created: thing.date_created,
     number_of_reviews,
-    author: {
-      id: author.id,
-      user_name: author.user_name,
-      full_name: author.full_name,
-      nickname: author.nickname,
-      date_created: author.date_created,
+    average_review_rating,
+    user: {
+      id: user.id,
+      user_name: user.user_name,
+      full_name: user.full_name,
+      nickname: user.nickname,
+      date_created: user.date_created,
     },
   }
 }
-function makeExpectedthingreviews(users, thingId, reviews) {
-  const expectedreviews = reviews
+
+function calculateAverageReviewRating(reviews) {
+  if(!reviews.length) return 0
+
+  const sum = reviews
+    .map(review => review.rating)
+    .reduce((a, b) => a + b)
+
+  return Math.round(sum / reviews.length)
+}
+
+function makeExpectedThingReviews(users, thingId, reviews) {
+  const expectedReviews = reviews
     .filter(review => review.thing_id === thingId)
-  return expectedreviews.map(review => {
+
+  return expectedReviews.map(review => {
     const reviewUser = users.find(user => user.id === review.user_id)
     return {
       id: review.id,
       text: review.text,
+      rating: review.rating,
       date_created: review.date_created,
       user: {
         id: reviewUser.id,
@@ -163,36 +191,39 @@ function makeExpectedthingreviews(users, thingId, reviews) {
         full_name: reviewUser.full_name,
         nickname: reviewUser.nickname,
         date_created: reviewUser.date_created,
-        date_modified: null,
       }
     }
   })
 }
+
 function makeMaliciousThing(user) {
-  const maliciousthing = {
+  const maliciousThing = {
     id: 911,
-    style: 'How-to',
+    image: 'http://placehold.it/500x500',
     date_created: new Date().toISOString(),
     title: 'Naughty naughty very naughty <script>alert("xss");</script>',
-    author_id: user.id,
+    user_id: user.id,
     content: `Bad image <img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">. But not <strong>all</strong> bad.`,
   }
-  const expectedthing = {
-    ...makeExpectedthing([user], maliciousthing),
+  const expectedThing = {
+    ...makeExpectedThing([user], maliciousThing),
     title: 'Naughty naughty very naughty &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
     content: `Bad image <img src="https://url.to.file.which/does-not.exist">. But not <strong>all</strong> bad.`,
   }
   return {
-    maliciousthing,
-    expectedthing,
+    maliciousThing,
+    expectedThing,
   }
 }
+
 function makeThingsFixtures() {
   const testUsers = makeUsersArray()
-  const testthings = makethingsArray(testUsers)
-  const testreviews = makereviewsArray(testUsers, testthings)
-  return { testUsers, testthings, testreviews }
+  const testThings = makeThingsArray(testUsers)
+  const testReviews = makeReviewsArray(testUsers, testThings)
+  return { testUsers, testThings, testReviews }
 }
+
+
 function cleanTables(db) {
   return db.raw(
     `TRUNCATE
@@ -202,6 +233,7 @@ function cleanTables(db) {
       RESTART IDENTITY CASCADE`
   )
 }
+
 function seedUsers(db, users) {
   const preppedUsers = users.map(user => ({
     ...user,
@@ -211,7 +243,11 @@ function seedUsers(db, users) {
     .into('thingful_users')
     .insert(preppedUsers)
 }
-function seedthingsTables(db, users, things, reviews=[]) {
+
+function seedThingsTables(db, users, things, reviews=[]) {
+  // return db
+  //   .into('thingful_users')
+  //   .insert(users)
   return seedUsers(db, users)
     .then(() =>
       db
@@ -222,7 +258,11 @@ function seedthingsTables(db, users, things, reviews=[]) {
       reviews.length && db.into('thingful_reviews').insert(reviews)
     )
 }
-function seedMaliciousthing(db, user, thing) {
+
+function seedMaliciousThing(db, user, thing) {
+  // return db
+  //   .into('thingful_users')
+  //   .insert([user])
   return seedUsers(db, [user])
     .then(() =>
       db
@@ -231,6 +271,7 @@ function seedMaliciousthing(db, user, thing) {
     )
 }
 
+// added makeAuthHeader method for testing
 function makeAuthHeader(user, secret = process.env.JWT_SECRET) {
   const token = jwt.sign({ user_id: user.id }, secret, {
     subject: user.user_name,
@@ -241,15 +282,16 @@ function makeAuthHeader(user, secret = process.env.JWT_SECRET) {
 
 module.exports = {
   makeUsersArray,
-  makethingsArray,
-  makeExpectedthing,
-  makeExpectedthingreviews,
+  makeThingsArray,
+  makeExpectedThing,
+  makeExpectedThingReviews,
   makeMaliciousThing,
-  makereviewsArray,
+  makeReviewsArray,
+
   makeThingsFixtures,
   cleanTables,
-  seedthingsTables,
-  seedMaliciousthing,
+  seedThingsTables,
+  seedMaliciousThing,
   makeAuthHeader,
   seedUsers,
 }
